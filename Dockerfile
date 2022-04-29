@@ -14,6 +14,6 @@ WORKDIR /app
 COPY . /app
 RUN python -m pip install -r requirements.txt
 
-CMD ["python3", "selenium_test_code.py"]
+# CMD ["python3", "main.py"]
 #docker run --entrypoint "demo.py" pylenium
 
