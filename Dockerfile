@@ -16,4 +16,3 @@ RUN python -m pip install -r requirements.txt
 
 # CMD ["python3", "main.py"]
 #docker run --entrypoint "demo.py" pylenium
-

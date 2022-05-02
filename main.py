@@ -11,13 +11,13 @@ options.add_argument('--no-sandbox')
 options.add_argument('--headless')
 options.add_argument('--disable-dev-shm-usage')
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
+# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
 
 # WinDriverPath  = r"chromedriver_win32/chromedriver.exe"
 # LinuxDriverPath = r"chromedriver_linux64/chromedriver"
 # driver = webdriver.Chrome(WinDriverPath,options=options)
 
-# driver = webdriver.Remote("http://192.168.1.5:4444/wd/hub", DesiredCapabilities.CHROME)
+driver = webdriver.Remote("http://localhost:4444/wd/hub", DesiredCapabilities.CHROME)
 
 driver.get("https://www.python.org")
 print('\n')
