@@ -1,23 +1,36 @@
-pipeline {
-     agent any
-
-     stage ('Git  Clone') {
-            steps {
+pipeline{
+    agent any
+    stages{
+        stage("Git Clone"){
+            steps{
+                echo "========Git Clone========"
                 git branch: 'main', credentialsId: 'GitHub_Credentials', url: 'https://github.com/itsbharatsaini/Selenium.git'
             }
+            
         }
-       
-        stage ('kubernetes Deploy') {
-			steps {
-				script {
-					kubernetesDeploy(
-						configs: 'selenium-pod.yaml',
-						kubeconfigId: 'K8S'
-						)           
-				   
-				}
-			}
-		}
-  
-    }  
+
+        stage("Check Git Repo"){
+            steps{
+                echo "========Git Repo========"
+                powershell 'dir'
+            }
+            
+        }
+
+        stage("K8s Deploy"){
+            steps{
+                echo "========Deploy to K8s========"
+                script {
+                    withCredentials([kubeconfigFile(credentialsId: 'K8S_Credential', variable: 'KUBECONFIG')])
+                    {
+                        powershell 'kubectl get pods'
+                        powershell 'kubectl apply -f k8s\\selenium-hub-deployment.yaml'
+                    }
+                }
+
+    
+            }
+            
+        }
+    }
 }
