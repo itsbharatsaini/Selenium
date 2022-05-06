@@ -15,6 +15,13 @@ pipeline {
             }
         }
        
+<<<<<<< HEAD
+=======
+        stage ('Test') {
+			steps {  
+				sh 'ls'
+			}
+>>>>>>> a9831361f3ac108a4aafefeefaf19255c521a0c8
 		}
   
     }  
