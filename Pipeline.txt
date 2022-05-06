@@ -1,15 +1,9 @@
 pipeline {
      agent any
-        environment {
-        registry = "itsbharatsaini/selenium"
-        registryCredential = 'dockerhub'
-        dockerImage = ''
-    }
-    stages {
 
-        stage ('checkout') {
+     stage ('Git  Clone') {
             steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/dev']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/itsbharatsaini/Selenium.git']]])
+                git branch: 'main', credentialsId: 'GitHub_Credentials', url: 'https://github.com/itsbharatsaini/Selenium.git'
             }
         }
        
