@@ -1,2 +1,0 @@
-1. selenium docker image-----with complete hub and server.
-2. 
