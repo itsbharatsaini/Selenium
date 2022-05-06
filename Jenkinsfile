@@ -23,12 +23,11 @@ pipeline{
                 script {
                     withCredentials([kubeconfigFile(credentialsId: 'K8S_Credential', variable: 'KUBECONFIG')])
                     {
-                        powershell 'kubectl get pods'
                         powershell 'kubectl apply -f k8s\\selenium-hub-deployment.yaml'
+                        powershell 'kubectl apply -f k8s\\selenium-node-chrome-deployment.yaml'
+                        powershell 'kubectl apply -f k8s\\selenium-node-firefox-deployment.yaml'
                     }
                 }
-
-    
             }
             
         }
