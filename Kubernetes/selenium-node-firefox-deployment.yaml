@@ -20,7 +20,7 @@ spec:
             medium: Memory
       containers:
       - name: selenium-node-firefox
-        image: selenium/node-firefox:latest
+        image: itsbharatsaini/selenium-node-firefox:latest
         ports:
         - containerPort: 5555
         volumeMounts:

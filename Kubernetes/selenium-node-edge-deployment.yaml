@@ -20,7 +20,7 @@ spec:
             medium: Memory
       containers:
       - name: selenium-node-edge
-        image: selenium/node-edge:latest
+        image: itsbharatsaini/selenium-node-edge:latest
         ports:
         - containerPort: 5555
         volumeMounts:
