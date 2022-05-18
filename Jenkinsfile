@@ -17,8 +17,8 @@ pipeline{
                     {
                         powershell 'kubectl apply -f Kubernetes\\selenium-hub-deployment.yaml'
                         powershell 'kubectl apply -f Kubernetes\\selenium-node-chrome-deployment.yaml'
-                        powershell 'kubectl apply -f Kubernetes\\selenium-node-firefox-deployment.yaml'
-                        powershell 'kubectl apply -f Kubernetes\\selenium-node-edge-deployment.yaml'
+                        // powershell 'kubectl apply -f Kubernetes\\selenium-node-firefox-deployment.yaml'
+                        // powershell 'kubectl apply -f Kubernetes\\selenium-node-edge-deployment.yaml'
                     }
                 }
             }
